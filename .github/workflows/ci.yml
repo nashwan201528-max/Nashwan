@@ -1,0 +1,49 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches-ignore:
+      - 'dependabot/**'
+  schedule:
+    - cron: '30 12 * * *'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-latest, ubuntu-latest, windows-latest]
+        node-version: [ 22, 24, 26 ]
+
+    steps:
+    - uses: actions/checkout@v7
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v7
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: Install Dependencies
+      run: npm install
+    - name: Run CI Tests
+      run: npm run ci
+
+  pnpm:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v7
+    - name: Use pnpm latest
+      uses: pnpm/action-setup@v6
+      with:
+        version: latest
+    - name: Use Node.js LTS
+      uses: actions/setup-node@v7
+      with:
+        node-version: lts/*
+    - name: Install dependencies
+      run: pnpm install
+    - name: Run CI Tests
+      run: npm test

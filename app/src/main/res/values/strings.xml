@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">MarkdownLint</string>
+    <string name="tab_editor">Editor</string>
+    <string name="tab_issues">Issues</string>
+    <string name="tab_preview">Preview</string>
+    <string name="tab_rules">Rules</string>
+    <string name="tab_presets">Presets</string>
+    <string name="tab_docs">Files</string>
+    <string name="action_fix_all">Fix All</string>
+    <string name="action_lint">Re-lint</string>
+    <string name="action_copy">Copy</string>
+    <string name="action_share">Share</string>
+</resources>

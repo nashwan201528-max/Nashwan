@@ -1,0 +1,6 @@
+<resources>
+    <color name="primary">#38BDF8</color>
+    <color name="primary_dark">#0284C7</color>
+    <color name="background_dark">#0F172A</color>
+    <color name="surface_dark">#1E293B</color>
+</resources>

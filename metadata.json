@@ -1,0 +1,6 @@
+{
+  "name": "MarkdownLint",
+  "description": "Professional Markdown linter, style validator, auto-fixer, and real-time editor with complete rule customization.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
